@@ -1,0 +1,11 @@
+version: "3"
+services:
+  demo:
+    image: public.ecr.aws/m3v4n4c6/edgehog-demo-app:latest
+    volumes:
+      - /var/lib/seco-iot/downloads/:/checkdir/
+    environment:
+      - SLEEP_TIMER=10
+      - CHECK_DIRECTORY=/checkdir/
+      - CHECK_FILE=test.txt
+      - PYTHONUNBUFFERED=1
